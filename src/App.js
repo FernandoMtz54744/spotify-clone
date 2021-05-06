@@ -4,6 +4,7 @@ import Search from './Search';
 import Home from './Home';
 import React from 'react';
 import ReproductorContext from './ReproductorContext';
+import Bienvenida from './Bienvenida';
 
 function App() {
  
@@ -22,9 +23,13 @@ function App() {
           <Route path="/Home">
             <Home />
           </Route>
+          <Route path="/">
+            <Bienvenida/>
+          </Route>
         </Switch>
       </HashRouter>
     </ReproductorContext>
+
   );
 }
 
