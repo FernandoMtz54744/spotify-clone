@@ -1,24 +1,30 @@
-import logo from './logo.svg';
 import './App.css';
+import {Switch, Route, Link, HashRouter } from "react-router-dom";
+import Search from './Search';
+import Home from './Home';
+import React from 'react';
+import ReproductorContext from './ReproductorContext';
 
 function App() {
+ 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ReproductorContext>
+      <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossOrigin="anonymous"/>
+      <HashRouter>
+        <header>
+        <Link to="/Home">Home</Link>
+        <Link to="/Search">Search</Link>
+        </header>
+        <Switch>
+          <Route path="/Search">
+            <Search />
+          </Route>
+          <Route path="/Home">
+            <Home />
+          </Route>
+        </Switch>
+      </HashRouter>
+    </ReproductorContext>
   );
 }
 

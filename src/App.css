@@ -1,38 +1,179 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+
+.Reproductor{
+  background-color: aquamarine;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 1.5rem;
+  background-color: rgba(	93, 222, 244, .15);
+  backdrop-filter: blur(5px);
+  height: 4rem;
+  margin: 0px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.infoTrack{
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.infoTrack > h2, .infoTrack > h3 {
+  margin: 0px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.timeTrack{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40%;
+}
+
+#time{
+  width: 100%;
+  outline: none;
+}
+
+#volume{
+  height: 100%;
+ 
+}
+
+input[type=range][orientation="vertical"]{
+    -webkit-appearance: slider-vertical; /* WebKit */   
+}
+
+.tracks{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  margin-bottom: 8rem;
+}
+
+.song{
+  display: flex;
+  flex-direction: column;
+  border: solid #5ddef4;
+  text-align: center;
+  border-radius: 10px;
+  padding: 1rem;
+}
+
+.song:hover{
+  border: solid #00acc1;
+}
+
+.opciones{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.playButton{
+  color: #5ddef4;
+}
+
+.playButton:hover{
+  cursor: pointer;
+  color: #007c91;
+}
+
+.favButton{
+  color: #5ddef4;
+}
+
+.favButton:hover{
+  cursor: pointer;
+  color: #007c91;
+}
+
+.searchButton{
+  color: #5ddef4;
+}
+
+
+.searchButton:hover{
+  cursor: pointer;
+  color: #007c91;
+}
+
+.minusButton{
+  color: #c62828;
+}
+
+.minusButton:hover{
+  cursor: pointer;
+  color: #8e0000;
+}
+
+body{
+  background-color: #212121;
+  color: whitesmoke;
+  font-family: 'Rubik', sans-serif;
+}
+
+.busqueda{
+  margin: 3rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.busqueda > input{
+  height: 2rem;
+  text-decoration: none;
+  border:solid #5ddef4;
+  background-color: transparent;
+  outline: none;
+  color: whitesmoke;
+  font-family: inherit;
+  font-size: 1.5rem;
+  width: 80%;
+  margin: 1rem;
+  padding: 0.5rem;
+}
+
+header{
+ margin: 1rem;
+ margin-bottom: 2rem;
+}
+
+header > a {
+  color: whitesmoke;
+  margin: 1rem;
+ font-size: 1.5rem;
+ text-decoration: inherit;
+}
+
+.vacio{
+  color:#5ddef4;
+  font-size: 3rem;
+  margin: 3rem;
+  text-align: center;
+
+}
+
+@media only screen and (max-width: 700px) {
+  .tracks{
+    grid-template-columns: 1fr 1fr;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+@media only screen and (max-width: 600px) {
+  .tracks{
+    grid-template-columns: 1fr;
+  }
+
+  .timeTrack{
+    display: none;
   }
 }
